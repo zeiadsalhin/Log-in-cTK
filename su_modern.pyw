@@ -8,6 +8,12 @@ window.iconbitmap("icon.ico")
 customtkinter.set_appearance_mode("dark")
 # customtkinter.set_default_color_theme("default")
 
+def change_appearance_mode_event(new_appearance_mode: str):
+    customtkinter.set_appearance_mode(new_appearance_mode)
+
+
+appearance_mode_optionemenu = customtkinter.CTkOptionMenu(window, values=["Dark", "Light", "System"], command=change_appearance_mode_event)
+appearance_mode_optionemenu.pack(padx=0, pady=0)
 
 def login():
     print("Welcome")
@@ -45,5 +51,6 @@ chkbox.pack(pady=12, padx=10)
 
 modeswitch = customtkinter.CTkButton(master=window, text="Light", font=("Roboto", 12), command=light)
 modeswitch.pack(pady=15, padx=10, side="left")
+
 
 window.mainloop()
